@@ -12,10 +12,10 @@ interface LoginProps {
   isOpen?: boolean;
 }
 
-const Login: React.FC<LoginProps> = ({ 
-  onLogin, 
-  onClose, 
-  isOpen = false 
+const Login: React.FC<LoginProps> = ({
+  onLogin,
+  onClose,
+  isOpen = false
 }) => {
   const [formData, setFormData] = useState<LoginFormData>({
     email: '',
@@ -51,7 +51,7 @@ const Login: React.FC<LoginProps> = ({
       ...prev,
       [name]: value
     }));
-    
+
     // Clear error when user starts typing
     if (errors[name as keyof LoginFormData]) {
       setErrors(prev => ({
@@ -63,25 +63,25 @@ const Login: React.FC<LoginProps> = ({
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     if (!validateForm()) {
       return;
     }
 
     setIsSubmitting(true);
-    
+
     try {
       // Simulate API call
       await new Promise(resolve => setTimeout(resolve, 1500));
-      
+
       if (onLogin) {
         onLogin(formData);
       }
-      
+
       // Reset form
       setFormData({ email: '', password: '' });
       setErrors({});
-      
+
     } catch (error) {
       console.error('Login failed:', error);
     } finally {
@@ -104,7 +104,7 @@ const Login: React.FC<LoginProps> = ({
       <div className="login-modal" onClick={(e) => e.stopPropagation()}>
         <div className="login-header">
           <h2 className="login-title">Welcome Back</h2>
-          <p className="login-subtitle">Sign in to your account</p>
+          <p className="login-subtitle">Sign in to your wedding planning account</p>
           <button className="close-button" onClick={handleClose} aria-label="Close">
             ×
           </button>
@@ -160,8 +160,8 @@ const Login: React.FC<LoginProps> = ({
             <a href="#forgot-password" className="forgot-link">Forgot password?</a>
           </div>
 
-          <button 
-            type="submit" 
+          <button
+            type="submit"
             className="submit-button"
             disabled={isSubmitting}
           >

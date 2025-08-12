@@ -15,7 +15,7 @@ interface ContactProps {
 
 const Contact: React.FC<ContactProps> = ({ 
   title = 'Contact Us', 
-  subtitle = 'Get in touch with us. We\'d love to hear from you!' 
+  subtitle = 'Let\'s start planning your dream wedding' 
 }) => {
   const [formData, setFormData] = useState<ContactFormData>({
     name: '',
@@ -67,21 +67,21 @@ const Contact: React.FC<ContactProps> = ({
                 <div className="info-icon">📍</div>
                 <div>
                   <h4>Address</h4>
-                  <p>123 Business Street<br />Tech City, TC 12345</p>
+                  <p>456 Wedding Lane<br />Romance City, RC 54321</p>
                 </div>
               </div>
               <div className="info-item">
                 <div className="info-icon">📧</div>
                 <div>
                   <h4>Email</h4>
-                  <p>hello@company.com</p>
+                  <p>hello@elegantweddings.com</p>
                 </div>
               </div>
               <div className="info-item">
                 <div className="info-icon">📱</div>
                 <div>
                   <h4>Phone</h4>
-                  <p>+1 (555) 123-4567</p>
+                  <p>+1 (555) LOVE-4567</p>
                 </div>
               </div>
             </div>
@@ -155,7 +155,7 @@ const Contact: React.FC<ContactProps> = ({
 
               {submitStatus === 'success' && (
                 <div className="success-message">
-                  Thank you! Your message has been sent successfully.
+                  Thank you! We\'ll be in touch soon to discuss your wedding plans.
                 </div>
               )}
 

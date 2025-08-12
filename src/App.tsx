@@ -49,30 +49,30 @@ function App() {
 
   return (
     <div className="App">
-      <Header 
-        title="React Redux TS App" 
+      <Header
+        title="Gildinh"
         onMenuClick={handleMenuClick}
         showMenu={showMenu}
         onNavClick={handleNavigation}
         onLoginClick={handleLoginClick}
       />
-      
+
       {showMenu && (
-        <div className="mobile-menu">
+        <div className="mobile-nav">
           <nav className="mobile-nav">
-            <button 
+            <button
               className="mobile-nav-item"
               onClick={() => handleNavigation('home')}
             >
               Home
             </button>
-            <button 
+            <button
               className="mobile-nav-item"
               onClick={() => handleNavigation('about')}
             >
-              About
+              Services
             </button>
-            <button 
+            <button
               className="mobile-nav-item"
               onClick={() => handleNavigation('contact')}
             >
@@ -81,12 +81,12 @@ function App() {
           </nav>
         </div>
       )}
-      
+
       <main className="App-main">
         {renderPage()}
       </main>
 
-      <Login 
+      <Login
         isOpen={showLogin}
         onClose={handleLoginClose}
         onLogin={handleLoginSubmit}

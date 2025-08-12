@@ -9,9 +9,9 @@ interface HeaderProps {
   onLoginClick?: () => void;
 }
 
-const Header: React.FC<HeaderProps> = ({ 
-  title = 'My App', 
-  onMenuClick, 
+const Header: React.FC<HeaderProps> = ({
+  title = 'My App',
+  onMenuClick,
   showMenu = false,
   onNavClick,
   onLoginClick
@@ -27,7 +27,7 @@ const Header: React.FC<HeaderProps> = ({
       <div className="header-container">
         <div className="header-left">
           {onMenuClick && (
-            <button 
+            <button
               className="menu-button"
               onClick={onMenuClick}
               aria-label="Toggle menu"
@@ -41,11 +41,11 @@ const Header: React.FC<HeaderProps> = ({
           )}
           <h1 className="header-title">{title}</h1>
         </div>
-        
+
         <nav className="header-nav">
           <ul className="nav-list">
             <li className="nav-item">
-              <button 
+              <button
                 className="nav-link"
                 onClick={() => handleNavClick('home')}
               >
@@ -53,15 +53,15 @@ const Header: React.FC<HeaderProps> = ({
               </button>
             </li>
             <li className="nav-item">
-              <button 
+              <button
                 className="nav-link"
                 onClick={() => handleNavClick('about')}
               >
-                About
+                Services
               </button>
             </li>
             <li className="nav-item">
-              <button 
+              <button
                 className="nav-link"
                 onClick={() => handleNavClick('contact')}
               >
@@ -70,7 +70,7 @@ const Header: React.FC<HeaderProps> = ({
             </li>
           </ul>
         </nav>
-        
+
         <div className="header-right">
           <button className="header-button" onClick={onLoginClick}>
             Login

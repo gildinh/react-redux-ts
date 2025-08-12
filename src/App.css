@@ -1,6 +1,7 @@
 .App {
   text-align: center;
   min-height: 100vh;
+  background: linear-gradient(135deg, #fefefe 0%, #f7e7ce 50%, #e8d5c4 100%);
 }
 
 .App-main {
@@ -14,10 +15,11 @@
   top: 70px;
   left: 0;
   right: 0;
-  background: rgba(102, 126, 234, 0.95);
+  background: linear-gradient(135deg, #f7e7ce 0%, #e8d5c4 50%, #d4a574 100%);
   backdrop-filter: blur(10px);
   z-index: 999;
   animation: slideDown 0.3s ease-out;
+  border-bottom: 2px solid #d4a574;
 }
 
 .mobile-nav {
@@ -27,9 +29,9 @@
 }
 
 .mobile-nav-item {
-  background: none;
-  border: none;
-  color: white;
+  background: rgba(212, 165, 116, 0.2);
+  border: 1px solid rgba(212, 165, 116, 0.4);
+  color: #2d1810;
   font-size: 1.2rem;
   font-weight: 600;
   padding: 15px 20px;
@@ -41,7 +43,7 @@
 }
 
 .mobile-nav-item:hover {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(212, 165, 116, 0.4);
   transform: translateX(10px);
 }
 
@@ -50,6 +52,7 @@
     opacity: 0;
     transform: translateY(-20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
