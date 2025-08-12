@@ -3,6 +3,7 @@ import Header from './components/Header';
 import Home from './components/Home';
 import About from './components/About';
 import Contact from './components/Contact';
+import Login from './components/Login';
 import './App.css';
 
 type PageType = 'home' | 'about' | 'contact';
@@ -10,6 +11,7 @@ type PageType = 'home' | 'about' | 'contact';
 function App() {
   const [currentPage, setCurrentPage] = useState<PageType>('home');
   const [showMenu, setShowMenu] = useState(false);
+  const [showLogin, setShowLogin] = useState(false);
 
   const handleMenuClick = () => {
     setShowMenu(!showMenu);
@@ -18,6 +20,20 @@ function App() {
   const handleNavigation = (page: string) => {
     setCurrentPage(page as PageType);
     setShowMenu(false);
+  };
+
+  const handleLoginClick = () => {
+    setShowLogin(true);
+  };
+
+  const handleLoginClose = () => {
+    setShowLogin(false);
+  };
+
+  const handleLoginSubmit = (data: { email: string; password: string }) => {
+    console.log('Login attempt:', data);
+    // Here you would typically make an API call
+    setShowLogin(false);
   };
 
   const renderPage = () => {
@@ -38,6 +54,7 @@ function App() {
         onMenuClick={handleMenuClick}
         showMenu={showMenu}
         onNavClick={handleNavigation}
+        onLoginClick={handleLoginClick}
       />
       
       {showMenu && (
@@ -68,6 +85,12 @@ function App() {
       <main className="App-main">
         {renderPage()}
       </main>
+
+      <Login 
+        isOpen={showLogin}
+        onClose={handleLoginClose}
+        onLogin={handleLoginSubmit}
+      />
     </div>
   );
 }

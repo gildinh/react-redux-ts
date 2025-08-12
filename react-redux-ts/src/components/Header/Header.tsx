@@ -6,13 +6,15 @@ interface HeaderProps {
   onMenuClick?: () => void;
   showMenu?: boolean;
   onNavClick?: (page: 'home' | 'about' | 'contact') => void;
+  onLoginClick?: () => void;
 }
 
 const Header: React.FC<HeaderProps> = ({ 
   title = 'My App', 
   onMenuClick, 
   showMenu = false,
-  onNavClick
+  onNavClick,
+  onLoginClick
 }) => {
   const handleNavClick = (page: 'home' | 'about' | 'contact') => {
     if (onNavClick) {
@@ -70,7 +72,9 @@ const Header: React.FC<HeaderProps> = ({
         </nav>
         
         <div className="header-right">
-          <button className="header-button">Login</button>
+          <button className="header-button" onClick={onLoginClick}>
+            Login
+          </button>
         </div>
       </div>
     </header>
