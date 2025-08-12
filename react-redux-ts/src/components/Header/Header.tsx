@@ -5,7 +5,7 @@ interface HeaderProps {
   title?: string;
   onMenuClick?: () => void;
   showMenu?: boolean;
-  onNavClick?: (page: string) => void;
+  onNavClick?: (page: 'home' | 'about' | 'contact') => void;
 }
 
 const Header: React.FC<HeaderProps> = ({ 
@@ -14,7 +14,7 @@ const Header: React.FC<HeaderProps> = ({
   showMenu = false,
   onNavClick
 }) => {
-  const handleNavClick = (page: string) => {
+  const handleNavClick = (page: 'home' | 'about' | 'contact') => {
     if (onNavClick) {
       onNavClick(page);
     }
